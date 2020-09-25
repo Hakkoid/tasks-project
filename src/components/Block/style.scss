@@ -1,0 +1,21 @@
+.Block {
+    box-shadow: 0px 2px 23px #EDEDED;
+    width: 387px;
+    height: 323px;
+    padding: 25px;
+    box-sizing: border-box;
+
+    &-Title {
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: 0.59375px;
+        text-align: start;
+    }
+
+    &-Content {
+        margin-top: 18px;
+    }
+}

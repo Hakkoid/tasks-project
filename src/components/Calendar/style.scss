@@ -1,0 +1,24 @@
+.Calendar {
+    &-WeekDay {
+        font-family: Helvetica Neue;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 19px;
+        color: rgba(52, 72, 94, 0.536062);
+    }
+
+    &-Days {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 18px;
+        color: #7C86A2;
+    }
+
+    &-Content {
+        display: grid;
+        grid-template-columns: repeat(7, 40px);
+        grid-template-rows:  60px repeat(5, 40px);
+        grid-column-gap: 10px;
+    }
+}
