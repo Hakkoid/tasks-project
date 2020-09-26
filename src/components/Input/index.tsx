@@ -1,5 +1,5 @@
-import { Component, Model, Emit } from 'vue-property-decorator'
-import { cn } from '@bem-react/classname';
+import { Component, Model } from 'vue-property-decorator'
+import { cn } from '@bem-react/classname'
 import { VueComponent } from '@/shims-vue'
 import { InputEvent } from '@/types'
 

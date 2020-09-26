@@ -10,13 +10,13 @@ import './style.scss'
 
 const WEEK_DAYS = [
     'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'
-];
+]
 
 const bemCls = cn('Calendar')
 
 @Component
 export default class Calendar extends VueComponent {
-  public store: Store = useStore(this.$store);
+  public store: Store = useStore(this.$store)
 
   get weekDays () {
     return WEEK_DAYS.map(day => <span class={bemCls('WeekDay')} key={day}>{day}</span>)
