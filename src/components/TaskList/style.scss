@@ -14,6 +14,11 @@
         color: #7C86A2;
         font-size: 14px;
 
+        &_done {
+            color: #BFC4CC;
+            text-decoration: line-through;
+        }
+
         & ~ & {
             margin-top: 10px;
         }

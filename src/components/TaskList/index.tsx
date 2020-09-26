@@ -1,13 +1,13 @@
 import { Component,  } from 'vue-property-decorator'
-import { cn } from '@bem-react/classname';
+import { cn } from '@bem-react/classname'
 import { useStore } from 'vuex-simple'
 import { Store } from '@/store/index'
 import Block from '@/components/Block'
 import Input from '@/components/Input'
-import { InputEvent } from '@/types'
 import { VueComponent } from '@/shims-vue'
 
 import './style.scss'
+import Item from './Item'
 
 export const bemCls = cn('TaskList')
 
@@ -28,8 +28,8 @@ export default class TaskList extends VueComponent {
     const day = this.store.selectedDay
 
     if (day) {
-      return day.tasks.map(({id, msg}) => (
-        <li key={id} class={bemCls('Item')}>{msg}</li>
+      return day.tasks.map(({ id, done, msg }) => (
+        <Item key={id} id={id} done={done} msg={msg} />
       ))
     }
 

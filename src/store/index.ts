@@ -41,11 +41,37 @@ export class Store {
     const day = this.days.find(({ id }) => id === dayId)
 
     if (day) {
-      day.tasks.push({
-        id: ++this.idCounter,
-        done: false,
-        msg
-      })
+      day.tasks = [
+        ...day.tasks,
+        {
+          id: ++this.idCounter,
+          done: false,
+          msg
+        }
+      ]
+    }
+  }
+
+  @Mutation()
+  public updateTask(payload: { dayId: number, taskId: number, done?: boolean, msg?: string }) {
+    const { dayId, taskId, msg, done } = payload
+
+    const day = this.days.find(({ id }) => id === dayId)
+
+    if (day) {
+        const index = day.tasks.findIndex(({ id }) => taskId === id)
+
+        if (index >= 0) {
+          day.tasks = [
+            ...day.tasks.slice(0, index),
+            {
+              ...day.tasks[index],
+              done: typeof done === 'boolean' ? done : day.tasks[index].done,
+              msg: typeof msg === 'string' ? msg : day.tasks[index].msg
+            },
+            ...day.tasks.slice(index + 1),
+          ]
+        }
     }
   }
 }
