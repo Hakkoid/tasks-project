@@ -42,8 +42,9 @@ export default class Calendar extends VueComponent {
     })
   }
 
-  get month() {
-    return this.store.date && this.store.date.toLocaleString('default', { month: 'long' })
+  get formattedDate() {
+    const { date } = this.store
+    return date && `${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`
   }
 
   get offset() {
@@ -53,7 +54,7 @@ export default class Calendar extends VueComponent {
   render() {
     return (
       <Block class={bemCls()}>
-        <template slot='title'>{this.month} {this.store.selected}</template>
+        <template slot='title'>{this.formattedDate}</template>
         <div class={bemCls('Content')}>
           {this.weekDays}
           <div class={bemCls('Offset')} style={{ 'grid-column-end': this.offset }} />
