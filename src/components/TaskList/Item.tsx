@@ -5,7 +5,6 @@ import { VueComponent } from '@/shims-vue'
 import { InputEvent } from '@/types'
 
 import { bemCls } from '.'
-import './style.scss'
 
 interface IProps {
   id: number;

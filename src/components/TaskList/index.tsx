@@ -1,15 +1,15 @@
 import { Component,  } from 'vue-property-decorator'
-import { cn } from '@bem-react/classname'
 import { useStore } from 'vuex-simple'
 import { Store } from '@/store/index'
 import Block from '@/components/Block'
 import Input from '@/components/Input'
 import { VueComponent } from '@/shims-vue'
+import cn from '@/bemCn'
 
-import './style.scss'
+import styles from './style.scss?module'
 import Item from './Item'
 
-export const bemCls = cn('TaskList')
+export const bemCls = cn('TaskList', styles)
 
 @Component
 export default class TaskList extends VueComponent {

@@ -1,9 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator'
-import { cn } from '@bem-react/classname'
+import cn from '@/bemCn'
 
-import './style.scss'
+import styles from './style.scss?module'
 
-const bemCls = cn('Block')
+const bemCls = cn('Block', styles)
 
 @Component
 export default class Block extends Vue {

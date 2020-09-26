@@ -16,3 +16,7 @@ export interface InputEvent {
 export interface KeyEvent {
   target: HTMLInputElement
 }
+
+export interface IClassNames {
+  [className: string]: string;
+}

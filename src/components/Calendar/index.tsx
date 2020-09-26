@@ -1,22 +1,18 @@
 import { Component } from 'vue-property-decorator'
-import { cn } from '@bem-react/classname'
 import { useStore } from 'vuex-simple'
 import { Store } from '@/store/index'
 import Block from '@/components/Block'
 import { VueComponent } from '@/shims-vue'
 import { getFirstDayOfMonth } from '@/utils'
+import cn from '@/bemCn'
 
-import './style.scss'
+import styles from './style.scss?module'
 
 const WEEK_DAYS = [
     'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'
 ]
 
-/**
- * Для классов я использовал бем и пакет от яндекса https://github.com/bem/bem-react/tree/master/packages/classname.
- * Он написан под реакт, но может использоваться и без него
- *  */ 
-const bemCls = cn('Calendar')
+const bemCls = cn('Calendar', styles)
 
 @Component
 export default class Calendar extends VueComponent {
