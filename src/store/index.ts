@@ -1,16 +1,20 @@
-import { State, Mutation } from 'vuex-simple'
+import { State, Mutation, Getter } from 'vuex-simple'
 import { IDayState } from '@/types'
 import { getDaysInMonth } from '@/utils'
 
 export class Store {
+  private idCounter = 0
+
   @State()
   public days: IDayState[] = []
 
   @State()
   public selected: number | null = null
 
-  private idCounter = 0
-
+  @Getter()
+  public get selectedDay(): IDayState | null {
+    return  this.days.find(item => this.selected === item.id) || null
+  }
   @Mutation()
   public setSelected(id: number | null) {
     this.selected = id
@@ -18,7 +22,7 @@ export class Store {
 
   @Mutation()
   public setMonth(date: Date) {
-    const daysCount = getDaysInMonth(date);
+    const daysCount = getDaysInMonth(date)
     
     this.days = []
 
@@ -31,8 +35,10 @@ export class Store {
   }
 
   @Mutation()
-  public addTask(id: number, msg: string) {
-    const day = this.days.find(item => item.id === id)
+  public addTask(payload: { dayId: number, msg: string }) {
+    const { dayId, msg } = payload
+
+    const day = this.days.find(({ id }) => id === dayId)
 
     if (day) {
       day.tasks.push({

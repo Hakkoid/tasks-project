@@ -9,7 +9,7 @@ import { VueComponent } from '@/shims-vue'
 
 import './style.scss'
 
-const bemCls = cn('TaskList')
+export const bemCls = cn('TaskList')
 
 @Component
 export default class TaskList extends VueComponent {
@@ -18,10 +18,22 @@ export default class TaskList extends VueComponent {
   public inputValue: string = ''
 
   public handleSave(): void {
-    if (this.store.selected) {
-      this.store.addTask(this.store.selected, this.inputValue)
+    if (this.store.selected && this.inputValue) {
+      this.store.addTask({ dayId: this.store.selected, msg: this.inputValue })
       this.inputValue = ''
     }
+  }
+
+  get tasks () {
+    const day = this.store.selectedDay
+
+    if (day) {
+      return day.tasks.map(({id, msg}) => (
+        <li key={id} class={bemCls('Item')}>{msg}</li>
+      ))
+    }
+
+    return []
   }
 
   render() {
@@ -29,7 +41,10 @@ export default class TaskList extends VueComponent {
       <Block class={bemCls()}>
         <template slot='title'>События</template>
         <div class={bemCls('Content')}>
-          <Input placeholder='Текст' value={this.inputValue} vModel={this.inputValue} onEnter={this.handleSave} />
+          <Input placeholder='Текст' vModel={this.inputValue} onEnter={this.handleSave} />
+          <ul class={bemCls('List')}>
+            {this.tasks}
+          </ul>
         </div>
       </Block>
     )

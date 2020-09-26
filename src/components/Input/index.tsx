@@ -11,6 +11,7 @@ interface IProps {
   placeholder?: string;
   value?: string;
   onEnter?: () => void;
+  // Не знаю как правильно прописать v-model
   vModel: any;
 }
 
@@ -30,7 +31,7 @@ export default class Input extends VueComponent<IProps> {
 
   render() {
     return (
-      <input {...this.$props} oninput={this.handleInput} onkeypress={this.handleEnter} class={bemCls()} />
+      <input {...this.$props} value={this.$props.value} oninput={this.handleInput} onkeypress={this.handleEnter} class={bemCls()} />
     )
   }
 }
