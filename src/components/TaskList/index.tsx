@@ -40,12 +40,10 @@ export default class TaskList extends VueComponent {
     return (
       <Block class={bemCls()}>
         <template slot='title'>События</template>
-        <div class={bemCls('Content')}>
-          <Input placeholder='Текст' vModel={this.inputValue} onEnter={this.handleSave} />
-          <ul class={bemCls('List')}>
+        <ul class={bemCls('List')}>
             {this.tasks}
-          </ul>
-        </div>
+            <li class={bemCls('Input')}><Input placeholder='Текст' vModel={this.inputValue} onEnter={this.handleSave} /></li>
+        </ul>
       </Block>
     )
   }

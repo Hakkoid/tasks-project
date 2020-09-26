@@ -33,9 +33,9 @@ export default class Item extends VueComponent<IProps> {
 
   render() {
     const { done, msg } = this.$props
-    console.log(done)
+
     return (
-      <li class={bemCls('Item', { done: done })}><input type="checkbox" onChange={this.handleChange} checked={done} /> {msg}</li>
+      <li class={bemCls('Item', { done: done })}><input class={bemCls('Checkbox')} type="checkbox" onChange={this.handleChange} checked={done} /> {msg}</li>
     )
   }
 }
