@@ -9,7 +9,7 @@ export class Store {
   public days: IDayState[] = []
 
   @State()
-  public month: string = ''
+  public date: Date | null = null
 
   @State()
   public selected: number | null = null
@@ -27,7 +27,7 @@ export class Store {
   public setMonth(date: Date) {
     const daysCount = getDaysInMonth(date)    
 
-    this.month = date.toLocaleString('default', { month: 'long' });
+    this.date = date;
   
     this.days = []
 
