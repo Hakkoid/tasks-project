@@ -49,9 +49,9 @@ export default class Calendar extends VueComponent {
     }
 
     return (
-      <Block class='Calendar'>
+      <Block class={calendarCls()}>
         <template slot='title'>Декабрь 2019</template>
-        <div class='Calendar-Content'>
+        <div class={calendarCls('Content')}>
           {this.weekDays}
           {this.computedDays}
         </div>
