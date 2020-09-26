@@ -5,6 +5,12 @@ import { getDaysInMonth } from '@/utils'
 export class Store {
   private idCounter = 0
 
+  constructor(date: Date) {
+    this.date = date;
+    this.setMonth(date)
+    this.setSelected(date.getDate())
+  }
+
   @State()
   public days: IDayState[] = []
 
