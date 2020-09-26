@@ -4,3 +4,5 @@ export const getDaysInMonth = (date: Date) => {
 
   return 32 - new Date(year, month, 32).getDate()
 }
+
+export const getFirstDayOfMonth = (date: Date) => new Date(date.getFullYear(), date.getMonth()).getDay()

@@ -14,6 +14,8 @@
         font-size: 14px;
         line-height: 32px;
         color: #7C86A2;
+        border: none;
+        background: none;
         border-radius: 50%;
         text-align: center;
         cursor: pointer;
@@ -28,6 +30,11 @@
                 background: #7ED5FC;
             }
         }
+    }
+
+    &-Offset {
+        grid-row-start: 2;
+        grid-column-start: 1;
     }
 
     &-Content {
