@@ -6,14 +6,16 @@
         margin: 0;
         padding: 0;
         max-height: 200px;
+        overflow-x: hidden;
         overflow-y: auto;
     }
 
     &-Item {
         color: #A2ABBF;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
+        font-size: 15px;
+        position: relative;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
 
         &_done {
             color: #BFC4CC;
@@ -26,10 +28,18 @@
     }
 
     &-Checkbox {
-        margin-right: 19px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        margin: 0;
+        position: absolute;
     }
 
     &-Input {
         margin-top: 15px;
+    }
+
+    &-Input, &-Item {
+        padding-left: 35px;
     }
 }
