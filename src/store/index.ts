@@ -6,7 +6,15 @@ export class Store {
   @State()
   public days: IDayState[] = []
 
+  @State()
+  public selected: number | null = null
+
   private idCounter = 0
+
+  @Mutation()
+  public setSelected(id: number | null) {
+    this.selected = id
+  }
 
   @Mutation()
   public setMonth(date: Date) {

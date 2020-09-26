@@ -6,13 +6,28 @@
         font-size: 15px;
         line-height: 19px;
         color: rgba(52, 72, 94, 0.536062);
+        text-align: center;
     }
 
     &-Day {
         font-weight: 500;
-        font-size: 15px;
+        font-size: 14px;
         line-height: 32px;
         color: #7C86A2;
+        border-radius: 50%;
+        text-align: center;
+        cursor: pointer;
+
+        &_view {
+            &_planned {
+                color: #AA3434;
+            }
+
+            &_selected {
+                color: #FFFFFF;
+                background: #7ED5FC;
+            }
+        }
     }
 
     &-Content {
