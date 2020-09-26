@@ -2,6 +2,8 @@ import { State, Mutation, Getter } from 'vuex-simple'
 import { IDayState } from '@/types'
 import { getDaysInMonth } from '@/utils'
 
+
+// Я не стал выносить логику для событий в отдельный модуль
 export class Store {
   private idCounter = 0
 
@@ -52,6 +54,7 @@ export class Store {
     const day = this.days.find(({ id }) => id === dayId)
 
     if (day) {
+      // Возможно тут не стоило пересоздавать массив, я еще не до конца разобрался в Vuex
       day.tasks = [
         ...day.tasks,
         {
@@ -71,7 +74,6 @@ export class Store {
 
     if (day) {
         const index = day.tasks.findIndex(({ id }) => taskId === id)
-
         if (index >= 0) {
           day.tasks = [
             ...day.tasks.slice(0, index),

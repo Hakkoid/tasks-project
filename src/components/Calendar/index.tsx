@@ -12,6 +12,10 @@ const WEEK_DAYS = [
     'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'
 ]
 
+/**
+ * Для классов я использовал бем и пакет от яндекса https://github.com/bem/bem-react/tree/master/packages/classname.
+ * Он написан под реакт, но может использоваться и без него
+ *  */ 
 const bemCls = cn('Calendar')
 
 @Component

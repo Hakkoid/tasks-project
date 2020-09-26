@@ -7,7 +7,6 @@ import { Store } from './store/index'
 
 Vue.use(Vuex)
 
-// init store with current date
 const instance = new Store(new Date())
 
 export default createVuexStore(instance, {

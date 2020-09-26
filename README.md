@@ -1,7 +1,9 @@
 # tasks-project
 
-##
-[Link to live](https://hakkoid.github.io/)
+[Ссылка на live пример](https://hakkoid.github.io/)
+
+Я не стал добавлять линтер 
+
 ## Project setup
 ```
 yarn install
