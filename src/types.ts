@@ -8,3 +8,11 @@ export interface ITask {
   done: boolean;
   msg: string;
 }
+
+export interface InputEvent {
+  target: HTMLInputElement
+}
+
+export interface KeyEvent {
+  target: HTMLInputElement
+}

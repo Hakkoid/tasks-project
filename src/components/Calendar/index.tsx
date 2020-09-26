@@ -11,14 +11,14 @@ const WEEK_DAYS = [
     'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'
 ];
 
-const calendarCls = cn('Calendar')
+const bemCls = cn('Calendar')
 
 @Component
 export default class Calendar extends VueComponent {
   public store: Store = useStore(this.$store);
 
   get weekDays () {
-    return WEEK_DAYS.map(day => <span class={calendarCls('WeekDay')} key={day}>{day}</span>)
+    return WEEK_DAYS.map(day => <span class={bemCls('WeekDay')} key={day}>{day}</span>)
   }
 
   get computedDays () {
@@ -32,7 +32,7 @@ export default class Calendar extends VueComponent {
       return (
         <span
           onClick={() => this.store.setSelected(id)}
-          class={calendarCls('Day', { view })}
+          class={bemCls('Day', { view })}
           key={id}
         >
           {id}
@@ -49,9 +49,9 @@ export default class Calendar extends VueComponent {
     }
 
     return (
-      <Block class={calendarCls()}>
+      <Block class={bemCls()}>
         <template slot='title'>Декабрь 2019</template>
-        <div class={calendarCls('Content')}>
+        <div class={bemCls('Content')}>
           {this.weekDays}
           {this.computedDays}
         </div>
