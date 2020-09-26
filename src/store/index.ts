@@ -9,6 +9,9 @@ export class Store {
   public days: IDayState[] = []
 
   @State()
+  public month: string = ''
+
+  @State()
   public selected: number | null = null
 
   @Getter()
@@ -22,8 +25,10 @@ export class Store {
 
   @Mutation()
   public setMonth(date: Date) {
-    const daysCount = getDaysInMonth(date)
-    
+    const daysCount = getDaysInMonth(date)    
+
+    this.month = date.toLocaleString('default', { month: 'long' });
+  
     this.days = []
 
     for (let i = 1, len = daysCount + 1; i < len; i++) {

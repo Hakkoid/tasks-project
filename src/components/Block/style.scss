@@ -14,6 +14,10 @@
         letter-spacing: 0.59375px;
         text-align: start;
         color: #6B7897;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
     }
 
     &-Content {

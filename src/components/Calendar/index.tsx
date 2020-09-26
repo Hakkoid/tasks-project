@@ -42,15 +42,9 @@ export default class Calendar extends VueComponent {
   }
 
   render() {
-    if (!this.store.days.length) {
-      const date = new Date
-      this.store.setMonth(date)
-      this.store.setSelected(date.getDate())
-    }
-
     return (
       <Block class={bemCls()}>
-        <template slot='title'>Декабрь 2019</template>
+        <template slot='title'>{this.store.month} {this.store.selected}</template>
         <div class={bemCls('Content')}>
           {this.weekDays}
           {this.computedDays}
