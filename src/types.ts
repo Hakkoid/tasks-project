@@ -4,6 +4,7 @@ export interface IDayState {
 }
 
 export interface ITask {
+  id: number;
   done: boolean;
   msg: string;
 }

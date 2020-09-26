@@ -1,16 +1,16 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
+import { createVuexStore } from 'vuex-simple'
+
+import { Store } from './store/index'
+
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+const instance = new Store()
 
-  },
-  mutations: {
-
-  },
-  actions: {
-
-  }
+export default createVuexStore(instance, {
+  strict: false,
+  modules: {},
+  plugins: []
 })
